@@ -10,5 +10,6 @@ class UsersController < ApplicationController
   end
 
   def timeline
+    @tweet = current_user.tweets.build
   end
 end

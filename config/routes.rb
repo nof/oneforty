@@ -7,8 +7,11 @@ Rails.application.routes.draw do
       get 'timeline'
     end
   end
-
+  resources :tweets, only: [:show, :create, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
   root 'users#timeline'
-
   devise_for :users, path: 'auth'
 end

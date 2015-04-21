@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   root 'users#timeline'
 
-  devise_for :users
+  devise_for :users, path: 'auth'
 end

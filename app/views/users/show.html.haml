@@ -1,4 +1,2 @@
-%p#notice= notice
-
-
-= link_to 'Back', users_path
+- @tweets = @user.tweets
+= render 'tweets/tweets'

@@ -1,10 +1,6 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
-  def index
-    @tweets = User.find_by(name: params[:user_name]).tweets
-  end
-
   def show
     @tweet = Tweet.find(params[:id])
   end

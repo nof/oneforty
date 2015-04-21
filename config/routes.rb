@@ -4,15 +4,13 @@ Rails.application.routes.draw do
     resources :likes, only: [:index]
     resources :followers, only: [:index]
     resources :followees, only: [:index]
-    member do
-      get 'home'
-    end
   end
   resources :tweets, only: [:show, :create, :destroy] do
     collection do
       get 'search'
     end
   end
-  root 'users#home'
+  resource :home, only: [:show]
+  root 'home#show'
   devise_for :users, path: 'auth'
 end

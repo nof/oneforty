@@ -11,15 +11,11 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = current_user.tweets.build(tweet_params)
-    respond_to do |format|
-      if @tweet.save
-        format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
-        format.json { render :show, status: :created, location: @tweet }
-        format.js {}
-      else
-        format.html { render :new }
-        format.json { render json: @tweet.errors, status: :unprocessable_entity }
-      end
+    if @tweet.save
+      render 'home/timeline'
+    else
+      # TODO @tweet.errorsをalert
+      # Ajax でも Rails の flash メッセージを表示したい！ - Qiita http://qiita.com/quanon86/items/979a0b918cf560c9322e
     end
   end
 

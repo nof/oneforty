@@ -1,3 +1,1 @@
-- @tweets.each do |tweet|
-  .panel.panel-default
-    .panel-body= tweet.body
+= render partial: 'tweets/tweet', collection: tweets

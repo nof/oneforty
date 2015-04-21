@@ -1,2 +1,1 @@
-- @tweets = @user.tweets
-= render 'tweets/tweets'
+= render partial: 'tweets/tweets', locals: { tweets: @user.tweets }

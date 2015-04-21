@@ -1,4 +1,3 @@
 = render 'tweets/form'
 #timeline
-  - @tweets = current_user.timeline
-  = render 'tweets/tweets'
+  = render partial: 'tweets/tweets', locals: { tweets: current_user.timeline }

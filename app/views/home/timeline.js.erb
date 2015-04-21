@@ -1,2 +1,1 @@
-<% @tweets = current_user.timeline %>
-$("#timeline").html("<%= j(render 'tweets/tweets') %>");
+$("#timeline").html("<%= j(render partial: 'tweets/tweets', locals: { tweets: current_user.timeline }) %>");

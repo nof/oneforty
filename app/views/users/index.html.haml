@@ -1,14 +1,8 @@
 %h1 Listing users
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @users.each do |user|
-      %tr
-        %td= link_to 'Show', user
-        %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.row
+  - @users.each do |user|
+    .panel.panel-default.col-xs-6
+      .panel-body
+        %span.h4= link_to user.popular_name, user_path(user.name)
+        %span= link_to "@#{user.name}", user_path(user.name)

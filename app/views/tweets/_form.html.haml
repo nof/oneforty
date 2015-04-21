@@ -1,4 +1,4 @@
-= simple_form_for(@tweet, remote: true) do |f|
+= simple_form_for(current_user.tweets.build, remote: true) do |f|
   = f.error_notification
 
   .form-inputs

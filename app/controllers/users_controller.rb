@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     @user = User.find_by_name(params[:name])
   end
 
-  def timeline
-    @tweet = current_user.tweets.build
+  def home
   end
 end

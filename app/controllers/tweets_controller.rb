@@ -11,6 +11,7 @@ class TweetsController < ApplicationController
       if @tweet.save
         format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
         format.json { render :show, status: :created, location: @tweet }
+        format.js {}
       else
         format.html { render :new }
         format.json { render json: @tweet.errors, status: :unprocessable_entity }

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :followers, only: [:index]
     resources :followees, only: [:index]
     member do
-      get 'timeline'
+      get 'home'
     end
   end
   resources :tweets, only: [:show, :create, :destroy] do
@@ -12,6 +12,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  root 'users#timeline'
+  root 'users#home'
   devise_for :users, path: 'auth'
 end

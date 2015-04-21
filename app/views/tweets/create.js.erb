@@ -1,1 +1,2 @@
-$("#timeline").html("<%= j(render 'users/timeline') %>");
+<% @tweets = current_user.timeline %>
+$("#timeline").html("<%= j(render 'tweets/tweets') %>");

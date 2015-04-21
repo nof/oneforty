@@ -1,8 +1,12 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
-  before_action :set_tweet, only: [:show, :destroy]
+  before_action :authenticate_user!, only: [:create, :destroy]
+
+  def index
+    @tweets = User.find_by(name: params[:user_name]).tweets
+  end
 
   def show
+    @tweet = Tweet.find(params[:id])
   end
 
   def create
@@ -20,7 +24,7 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    @tweet.destroy
+    current_user.tweets.destroy(params[:id])
     respond_to do |format|
       format.html { redirect_to tweets_url, notice: 'Tweet was successfully destroyed.' }
       format.json { head :no_content }
@@ -28,10 +32,6 @@ class TweetsController < ApplicationController
   end
 
   private
-    def set_tweet
-      @tweet = Tweet.find(params[:id])
-    end
-
     def tweet_params
       params.require(:tweet).permit(:body, :user_id)
     end

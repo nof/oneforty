@@ -1,3 +1,4 @@
 = render 'tweets/form'
 #timeline
-  = render 'timeline'
+  - @tweets = current_user.timeline
+  = render 'tweets/tweets'

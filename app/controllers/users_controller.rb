@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:timeline]
+  before_action :authenticate_user!, only: [:home]
 
   def index
     @users = User.all

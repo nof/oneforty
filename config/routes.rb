@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users, param: :name, only: [:index, :show] do
+    resources :tweets, only: [:index]
     resources :likes, only: [:index]
     resources :followers, only: [:index]
     resources :followees, only: [:index]

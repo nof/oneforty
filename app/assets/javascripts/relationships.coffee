@@ -1,3 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $(@).on 'mouseover', '.btn-unfollow', ->
+    $(@).removeClass('btn-success').addClass('btn-danger').val('フォロー解除')
+  $(@).on 'mouseout', '.btn-unfollow', ->
+    $(@).removeClass('btn-danger').addClass('btn-success').val('フォロー中')

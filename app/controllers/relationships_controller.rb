@@ -4,12 +4,10 @@ class RelationshipsController < ApplicationController
 
   def create
     current_user.follow! @user
-    render 'users/refresh_card'
   end
 
   def destroy
     current_user.unfollow! @user
-    render 'users/refresh_card'
   end
 
   private

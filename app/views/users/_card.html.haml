@@ -1,8 +1,23 @@
-%div{ id: "card-#{user.name}" }
-  %span.h4= link_to user.popular_name, user_path(user.name)
-  %span= link_to "@#{user.name}", user_path(user.name)
-  - if current_user && current_user.id != user.id
-    - if current_user.follow? user
-      = render partial: 'relationships/unfollow', locals: { user: user }
-    - else
-      = render partial: 'relationships/follow', locals: { user: user }
+.container-fluid{ id: "card-#{user.name}" }
+  .row
+    %span.h4= link_to user.popular_name, user_path(user.name)
+    %span= link_to "@#{user.name}", user_path(user.name)
+  .row
+    .col-xs-4
+      = link_to user_path(user.name), class: ['btn', 'btn-default'] do
+        .small ツイート
+        .h4= user.tweets.count
+    .col-xs-4
+      = link_to user_followees_path(user.name), class: ['btn', 'btn-default'] do
+        .small フォロー
+        .h4= user.followees.count
+    .col-xs-4
+      = link_to user_followers_path(user.name), class: ['btn', 'btn-default'] do
+        .small フォロワー
+        .h4= user.followers.count
+  .row
+    - if current_user && current_user.id != user.id
+      - if current_user.follow? user
+        = render partial: 'relationships/unfollow', locals: { user: user }
+      - else
+        = render partial: 'relationships/follow', locals: { user: user }

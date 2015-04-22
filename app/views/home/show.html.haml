@@ -1,3 +1,4 @@
+= render partial: 'users/card', locals: { user: current_user }
 = render 'tweets/form'
 #timeline
   = render partial: 'tweets/tweets', locals: { tweets: current_user.timeline }

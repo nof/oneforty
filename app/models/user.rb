@@ -20,6 +20,6 @@ class User < ActiveRecord::Base
   end
 
   def timeline
-    tweets.all
+    Tweet.timeline_by_user(self)
   end
 end

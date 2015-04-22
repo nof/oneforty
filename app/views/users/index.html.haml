@@ -3,6 +3,4 @@
 .row
   - @users.each do |user|
     .panel.panel-default.col-xs-6
-      .panel-body
-        %span.h4= link_to user.popular_name, user_path(user.name)
-        %span= link_to "@#{user.name}", user_path(user.name)
+      .panel-body= render partial: 'users/card', locals: { user: user }

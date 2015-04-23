@@ -6,8 +6,8 @@ class TweetsController < ApplicationController
     if @tweet.save
       render 'home/timeline'
     else
-      # TODO @tweet.errorsをalert
-      # Ajax でも Rails の flash メッセージを表示したい！ - Qiita http://qiita.com/quanon86/items/979a0b918cf560c9322e
+      flash[:alert] = @tweet.errors.full_messages.join(', ')
+      render text: 'location.reload();'
     end
   end
 

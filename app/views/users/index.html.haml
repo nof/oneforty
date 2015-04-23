@@ -1,4 +1,7 @@
 .row
+  - if @user
+    .well
+      = render partial: 'users/card', locals: { user: @user }
   %div
     = page_entries_info @users
   %div

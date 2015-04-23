@@ -31,4 +31,5 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'erb2haml'
   gem 'quiet_assets'
+  gem 'faker'
 end

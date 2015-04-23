@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get 'followees'
     end
   end
-  resources :tweets, only: [:show, :create, :destroy] do
+  resources :tweets, only: [:create, :destroy] do
     resource :favorite, only: [:create, :destroy]
     collection do
       get 'search'

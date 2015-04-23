@@ -16,6 +16,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
+gem 'ransack'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'

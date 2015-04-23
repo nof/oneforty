@@ -16,6 +16,10 @@ class TweetsController < ApplicationController
     @tweet.destroy
   end
 
+  def search
+    @tweets = Tweet.search(body_cont: params[:q]).result
+  end
+
   private
     def tweet_params
       params.require(:tweet).permit(:body, :user_id)

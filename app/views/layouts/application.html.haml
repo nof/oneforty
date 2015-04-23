@@ -10,14 +10,16 @@
     %nav.navbar.navbar-default
       .container-fluid
         .navbar-header
-          = link_to '140', root_path, { class: 'navbar-brand' }
+          = link_to '140', root_path, class: 'navbar-brand'
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li= link_to 'ユーザーズ', users_path
-          %form.navbar-form.navbar-right
-            %input.form-control
-            %button.btn.btn-default 検索
-
+          = form_tag search_tweets_path, method: :get, class: 'navbar-form navbar-right' do
+            .input-group
+              = text_field_tag :q, nil, class: 'form-control', placeholder: '140を検索'
+              %span.input-group-btn
+                = button_tag class: 'btn btn-default' do
+                  %i.fa.fa-search
     %p.notice= notice
     %p.alert= alert
     = yield

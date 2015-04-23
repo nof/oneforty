@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
   before_action :set_tweet, only: [:create, :destroy]
 
   def index
-    @favorite_tweets = User.find_by(name: params[:user_name]).favorite_tweets
+    @tweets = User.find_by(name: params[:user_name]).favorite_tweets.page params[:page]
   end
 
   def create

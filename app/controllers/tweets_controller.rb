@@ -17,7 +17,7 @@ class TweetsController < ApplicationController
   end
 
   def search
-    @tweets = Tweet.search(body_cont: params[:q]).result
+    @tweets = Tweet.search(body_cont: params[:q]).result.page params[:page]
   end
 
   private

@@ -17,6 +17,7 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'ransack'
+gem 'kaminari'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'

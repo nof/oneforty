@@ -1,1 +1,5 @@
+%div
+  = page_entries_info @tweets
 = render partial: 'tweets/tweets', locals: { tweets: @tweets }
+%div
+  = paginate @tweets

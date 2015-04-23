@@ -1,3 +1,8 @@
 .panel.panel-default
   .panel-body= render partial: 'users/card', locals: { user: @user }
-= render partial: 'tweets/tweets', locals: { tweets: @user.tweets }
+%div
+  = page_entries_info @tweets
+%div
+  = render partial: 'tweets/tweets', locals: { tweets: @tweets }
+%div
+  = paginate @tweets

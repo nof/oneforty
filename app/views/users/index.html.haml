@@ -1,4 +1,9 @@
 .row
-  - @users.each do |user|
-    .panel.panel-default.col-xs-6
-      .panel-body= render partial: 'users/card', locals: { user: user }
+  %div
+    = page_entries_info @users
+  %div
+    - @users.each do |user|
+      .panel.panel-default.col-xs-6
+        .panel-body= render partial: 'users/card', locals: { user: user }
+  %div
+    = paginate @users

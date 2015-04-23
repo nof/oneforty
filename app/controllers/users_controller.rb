@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:followers, :followees]
   before_action :set_user, only: [:followers, :followees]
 
   def index

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, param: :name, only: [:index, :show] do
+  resources :users, param: :name, constraints: { name: /[^\/]+/ }, only: [:index, :show] do
     resource :relationship, only: [:create, :destroy]
     resources :favorites, only: [:index]
     member do

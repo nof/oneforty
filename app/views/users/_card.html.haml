@@ -1,4 +1,4 @@
-.container-fluid{ id: "card-#{user.name}" }
+.container-fluid{ id: "card-#{user.id}" }
   .row
     %span.h4= link_to user.popular_name, user_path(user.name)
     %span= link_to "@#{user.name}", user_path(user.name)

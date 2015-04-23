@@ -1,2 +1,2 @@
 <% js = j(render partial: 'users/card', locals: { user: user}) %>
-$('<%= "#card-#{user.name}" %>').replaceWith("<%= js %>");
+$('<%= "#card-#{user.id}" %>').replaceWith("<%= js %>");

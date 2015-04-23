@@ -1,5 +1,5 @@
 .well
-  = render partial: 'users/card', locals: { user: @user }
+  = render partial: 'users/card', locals: { user: @user, actives: [:favorite] }
 %div
   = page_entries_info @tweets
 %div

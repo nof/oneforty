@@ -3,18 +3,22 @@
     %span.h4= link_to user.popular_name, user_path(user.name)
     %span= link_to "@#{user.name}", user_path(user.name)
   .row
-    .col-xs-4
+    .col-xs-3
       = link_to user_path(user.name), class: ['btn', 'btn-default'] do
         .small ツイート
         .h4= user.tweets.count
-    .col-xs-4
+    .col-xs-3
       = link_to followees_user_path(user.name), class: ['btn', 'btn-default'] do
         .small フォロー
         .h4= user.followees.count
-    .col-xs-4
+    .col-xs-3
       = link_to followers_user_path(user.name), class: ['btn', 'btn-default'] do
         .small フォロワー
         .h4= user.followers.count
+    .col-xs-3
+      = link_to user_favorites_path(user.name), class: ['btn', 'btn-default'] do
+        .small お気に入り
+        .h4= user.favorites.count
   .row
     - if current_user && current_user.id != user.id
       - if current_user.follow? user

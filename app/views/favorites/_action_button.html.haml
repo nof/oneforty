@@ -1,0 +1,6 @@
+- if current_user.favorite?(tweet)
+  = link_to tweet_favorite_path(tweet), remote: true, method: :delete, class: 'pull-right' do
+    %i.fa.fa-star
+- else
+  = link_to tweet_favorite_path(tweet), remote: true, method: :post, class: 'pull-right' do
+    %i.fa.fa-star-o

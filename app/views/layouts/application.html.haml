@@ -7,6 +7,17 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          = link_to '140', root_path, { class: 'navbar-brand' }
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li= link_to 'ユーザーズ', users_path
+          %form.navbar-form.navbar-right
+            %input.form-control
+            %button.btn.btn-default 検索
+
     %p.notice= notice
     %p.alert= alert
     = yield

@@ -1,5 +1,7 @@
-= render partial: 'users/card', locals: { user: current_user }
-= render 'tweets/form'
+.well
+  = render partial: 'users/card', locals: { user: current_user }
+  .row
+    = render 'tweets/form'
 #timeline
   %div
     = page_entries_info @timeline

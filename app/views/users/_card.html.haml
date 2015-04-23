@@ -4,19 +4,19 @@
     %span= link_to "@#{user.name}", user_path(user.name)
   .row
     .col-xs-3
-      = link_to user_path(user.name), class: ['btn', 'btn-default'] do
+      = link_to user_path(user.name), class: 'btn btn-default btn-card' do
         .small ツイート
         .h4= user.tweets.count
     .col-xs-3
-      = link_to followees_user_path(user.name), class: ['btn', 'btn-default'] do
+      = link_to followees_user_path(user.name), class: 'btn btn-default btn-card' do
         .small フォロー
         .h4= user.followees.count
     .col-xs-3
-      = link_to followers_user_path(user.name), class: ['btn', 'btn-default'] do
+      = link_to followers_user_path(user.name), class: 'btn btn-default btn-card' do
         .small フォロワー
         .h4= user.followers.count
     .col-xs-3
-      = link_to user_favorites_path(user.name), class: ['btn', 'btn-default'] do
+      = link_to user_favorites_path(user.name), class: 'btn btn-default btn-card' do
         .small お気に入り
         .h4= user.favorites.count
   .row

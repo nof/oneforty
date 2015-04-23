@@ -1,8 +1,5 @@
 = simple_form_for(current_user.tweets.build, remote: true) do |f|
-  = f.error_notification
-
   .form-inputs
-    = f.input :body
-
+    = f.input :body, label: false, placeholder: 'いまどうしてる？'
   .form-actions
-    = f.button :submit, 'ツイート'
+    = f.button :submit, 'ツイート', class: 'btn-info pull-right'

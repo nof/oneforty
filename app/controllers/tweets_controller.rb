@@ -1,10 +1,6 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
-  def show
-    @tweet = Tweet.find(params[:id])
-  end
-
   def create
     @tweet = current_user.tweets.build(tweet_params)
     if @tweet.save

@@ -12,3 +12,4 @@
           = render partial: 'favorites/action_button', locals: { tweet: tweet }
     %div
       = tweet.body
+    .pull-right= time_ago_in_words tweet.created_at

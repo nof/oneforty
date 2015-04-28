@@ -39,4 +39,5 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'erb2haml'
   gem 'quiet_assets'
+  gem 'meta_request'
 end
